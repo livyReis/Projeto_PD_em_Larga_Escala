@@ -31,4 +31,4 @@ Depois que o modelo é gerado, as previsões são feitas a partir de “votaçõ
 árvore toma uma decisão a partir dos dados apresentados. A decisão mais votada é a 
 resposta do algoritmo.
 
-###OBS: No documento README_Projeto_final_PD_em_Larga_Escala.pdf é realizado o tutorial passo a passo de todas as etapas realizadas no projeto.
+### OBS: No documento README_Projeto_final_PD_em_Larga_Escala.pdf é realizado o tutorial passo a passo de todas as etapas realizadas no projeto.
