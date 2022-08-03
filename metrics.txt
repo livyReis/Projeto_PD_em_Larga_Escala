@@ -1,0 +1,21 @@
+F1-Score por label:
+F1-Score(0.0) = 0.7781472139417565
+F1-Score(1.0) = 0.4874077842788095
+F1-Score(2.0) = 0.8260493292946776
+
+Precision:
+Precision(0.0) = 0.6380558428128231
+Precision(1.0) = 0.9835728952772074
+Precision(2.0) = 0.9953076120959332
+
+Recall por label:
+Recall(0.0) = 0.9970618480975466
+Recall(1.0) = 0.3239770037199865
+Recall(2.0) = 0.705991124260355
+
+
+Sumário de métricas
+Acurácia = 0.7603411513859275
+weightedFMeasure = 0.7397598243283833
+weightedPrecision = 0.8414480284406481
+weightedRecall = 0.7603411513859274
