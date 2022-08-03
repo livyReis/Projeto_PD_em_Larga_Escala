@@ -14,23 +14,24 @@ import spark.implicits._
 
 //Carregando e Indexando Dados//
 
-// Lendo os dados do HDFS e converte para um dataframe
+// Lendo os dados do HDFS
 val df_pt7web = { 
 	spark.read
 	.format("parquet")
 	.load("hdfs://master:8020/bigdata/pt7-hash.parquet")
 }
 
-//Indexando coluna de labels
+//Indexando a coluna de labels
 val labelIndexer = new StringIndexer()
   .setInputCol("label")
   .setOutputCol("indexedLabel")
   .fit(df_pt7web)
   
+//Separando o Conjunto de Treinamento e Teste
 val Array(train, test) = df_pt7web.randomSplit(Array(0.01, 0.3), 1275)
 
 
-//Instanciando modelo e treinando//
+//Instanciando modelo e realizando o treinamento//
 val random_forest = new RandomForestClassifier()
 		.setLabelCol("indexedLabel")
 		.setFeaturesCol("features")
@@ -63,7 +64,7 @@ val metrics_ = new MulticlassMetrics(preds_and_labels.rdd.map(x => (x(0).asInsta
 //Extraindo labels
 val labels = metrics_.labels
 
-//Escrever métricas no arquivo
+//Escrevendo as métricas no arquivo
 val file_object = new File("/user_data/metrics.txt" ) 
 val print_writer = new PrintWriter(file_object) 
 
